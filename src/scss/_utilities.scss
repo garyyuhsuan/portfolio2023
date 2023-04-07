@@ -1,0 +1,16 @@
+.maxwidth__780 {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.d__flex {
+  display: flex;
+}
+
+.spacing {
+  &__200 {
+    width: 100%;
+    height: 200px;
+  }
+}

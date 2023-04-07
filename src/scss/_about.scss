@@ -1,0 +1,70 @@
+.about {
+  width: 100%;
+  margin-top: 5rem;
+  margin-bottom: 3.75rem;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__img {
+    background-image: url("../asset/img__about--gary.png");
+    background-size: cover;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 40px;
+    box-shadow: 0px 24px 32px rgba(210, 173, 173, 0.6);
+    @media (max-width: 600px) {
+      margin-bottom: 60px;
+      width: 8rem;
+      height: 8rem;
+    }
+  }
+
+  &__info {
+    flex-direction: column;
+    width: calc(100% - 200px);
+    margin-left: auto;
+    @media (max-width: 600px) {
+      margin: 0;
+      width: 90%;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    color: #8b7a7a;
+  }
+
+  &__caption {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #8b7a7a;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  &__list {
+    margin-top: 1rem;
+    width: 100%;
+    flex-wrap: wrap;
+    &--tag {
+      padding: 0.25rem 1rem;
+      background: white;
+      box-shadow: 0px 8px 28px rgba(210, 173, 173, 0.3);
+      border-radius: 30px;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 160%;
+      color: #8b7a7a;
+      margin: 0.5rem 0.75rem 0.5rem 0;
+      white-space: nowrap;
+    }
+  }
+}
