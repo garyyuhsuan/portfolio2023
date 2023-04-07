@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <title>GARY CHANG | PORTFOLIO</title>
+  </head>
+  <body>
+    <div class="bg__blur--index parallex__bg--index">
+      <div class="nav">
+        <div class="nav__wrap maxwidth__780 d__flex">
+          <ul class="nav__menu d__flex">
+            <li>
+              <a href="" class="nav__menu--link">Works</a>
+            </li>
+            <li>
+              <a href="" class="nav__menu--link">About</a>
+            </li>
+            <li>
+              <a href="" class="nav__menu--link">Resume</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="maxwidth__780">
+        <div class="cover">
+          <div class="cover__title--sub">
+            Hello My name is GARY CHANG and I love to
+          </div>
+          <div class="cover__title--main">
+            Develop and Design Fascinating Interaction
+          </div>
+          <div class="cover__divider"></div>
+          <button class="cover__btn">Learn More →</button>
+        </div>
+
+        <div class="work__right">
+          <div class="work__right--card">
+            <div class="work__title">Balance Insight Service</div>
+            <div class="work__caption">
+              A newly launched service merging credit card and account records
+              all in one, including cash flow analysis, budget control features.
+            </div>
+            <div class="work__row d__flex">
+              <div class="work__tag">Front End Dev.</div>
+              <div class="work__btn">Demo</div>
+            </div>
+          </div>
+          <div class="work__right--image"></div>
+        </div>
+
+        <div class="work__left">
+          <div class="work__left--image"></div>
+          <div class="work__left--card">
+            <div class="work__title">Job Mentorship Network</div>
+            <div class="work__caption">
+              A service passing on top-job hacking experience as well as
+              enhancing senior insider from the company building their own
+              mentorship branding network.
+            </div>
+            <div class="work__row d__flex">
+              <div class="work__tag">UX Design</div>
+              <div class="work__btn">Demo</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about d__flex">
+          <div class="about__img"></div>
+          <div class="about__info d__flex">
+            <div class="about__title">About</div>
+            <div class="about__caption">
+              A service passing on top-job hacking experience as well as
+              enhancing senior insider from the company building their own
+              mentorship branding network.
+            </div>
+            <ul class="about__list d__flex">
+              <li class="about__list--tag">JavaScript</li>
+              <li class="about__list--tag">Angular</li>
+              <li class="about__list--tag">React</li>
+              <li class="about__list--tag">HTML / Pug</li>
+              <li class="about__list--tag">CSS / SCSS</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="job d__flex">
+          <div class="job__tab" id="tabs">
+            <div class="tab focus">SinoPac</div>
+            <div class="tab">JobWits</div>
+            <div class="tab">Ogilvy</div>
+            <div class="tab">KKStream</div>
+          </div>
+
+          <div class="tabContent job__content d__flex">
+            <div class="job__content--title">UX Engineer</div>
+            <div class="job__content--intro">
+              A service passing on top-job hacking experience as well as
+              enhancing senior insider from the company building their own
+              mentorship branding network.
+            </div>
+            <div class="job__content--text">
+              A service passing on top-job hacking experience as well as
+              enhancing senior insider from the company building their own
+              mentorship branding network.
+            </div>
+          </div>
+
+          <div class="tabContent job__content d__flex">
+            <div class="job__content--title">UXUI Designer</div>
+            <div class="job__content--intro">
+              A service passing on top-job hacking experience as well as
+              enhancing senior insider from the company building their own
+              mentorship branding network.
+            </div>
+            <div class="job__content--text">
+              A service passing on top-job hacking experience as well as
+              enhancing senior insider from the company building their own
+              mentorship branding network.
+            </div>
+          </div>
+
+          <div class="tabContent job__content d__flex">
+            <div class="job__content--title">Experience Design Intern</div>
+            <div class="job__content--intro">
+              A service passing on top-job hacking experience as well as
+              enhancing senior insider from the company building their own
+              mentorship branding network.
+            </div>
+            <div class="job__content--text">
+              A service passing on top-job hacking experience as well as
+              enhancing senior insider from the company building their own
+              mentorship branding network.
+            </div>
+          </div>
+
+          <div class="tabContent job__content d__flex">
+            <div class="job__content--title">Product Design Intern</div>
+            <div class="job__content--intro">
+              A service passing on top-job hacking experience as well as
+              enhancing senior insider from the company building their own
+              mentorship branding network.
+            </div>
+            <div class="job__content--text">
+              A service passing on top-job hacking experience as well as
+              enhancing senior insider from the company building their own
+              mentorship branding network.
+            </div>
+          </div>
+          
+        </div>
+
+        <div class="contact">
+          <div class="contact__title--main">Get in Touch!</div>
+          <div class="contact__divider"></div>
+          <div class="contact__email">garychang.yuhsuan@gmail.com</div>
+          <div class="contact__linkedin">
+            linkedin.com/in/gary-chang-yuhsuan
+          </div>
+        </div>
+
+        <div class="spacing__200"></div>
+
+        <div class="signature">Designed & Built by GARY CHANG ©</div>
+      </div>
+    </div>
+
+    <script>
+      var tab;
+      var tabContent;
+
+      window.onload = function () {
+        tabContent = document.getElementsByClassName("tabContent");
+        tab = document.getElementsByClassName("tab");
+        hideTabsContent(1);
+      };
+
+      document.getElementById("tabs").onclick = function (event) {
+        var target = event.target;
+        if (target.className == "tab") {
+          for (var i = 0; i < tab.length; i++) {
+            if (target == tab[i]) {
+              showTabsContent(i);
+              break;
+            }
+          }
+        }
+      };
+
+      function hideTabsContent(a) {
+        for (var i = a; i < tabContent.length; i++) {
+          tabContent[i].classList.remove("show");
+          tabContent[i].classList.add("hide");
+          tab[i].classList.remove("focus");
+        }
+      }
+
+      function showTabsContent(b) {
+        if (tabContent[b].classList.contains("hide")) {
+          hideTabsContent(0);
+          tab[b].classList.add("focus");
+          tabContent[b].classList.remove("hide");
+          tabContent[b].classList.add("show");
+        }
+      }
+    </script>
+  </body>
+</html>
