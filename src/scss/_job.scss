@@ -1,4 +1,3 @@
-
 // tab-control
 .tab {
   cursor: pointer;
@@ -61,12 +60,19 @@
   border-radius: 20px;
   border: 1px solid rgba(229, 236, 242, 0.6);
   width: 100%;
-  flex-direction: column;
 
+  @media (max-width: 640px) {
+    flex-direction: column;
+  }
 
   &__tab {
     padding-right: 0.55rem;
-    overflow: scroll;
+    flex-direction: column;
+
+    @media (max-width: 640px) {
+      overflow: scroll;
+      flex-direction: row;
+    }
   }
 
   &__content {

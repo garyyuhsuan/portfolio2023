@@ -6,6 +6,9 @@
     rgba(255, 255, 255, 0) 77.17%
   );
   backdrop-filter: blur(40px);
+  position: fixed;
+  z-index: 9999;
+  transition: 0.3s ease;
 
   ul {
     list-style: none;

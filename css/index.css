@@ -13,6 +13,7 @@
   max-width: 780px;
   margin: 0 auto;
   padding: 1.5rem;
+  position: relative;
 }
 
 .d__flex {
@@ -26,11 +27,65 @@
   height: 200px;
 }
 
+#myBtn {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 20px; /* Place the button 30px from the right */
+  z-index: 99999; /* Make sure it does not overlap */
+  background-color: white; /* Set a background color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 0.75rem; /* Some padding */
+  border-radius: 80px; /* Rounded corners */
+  -webkit-box-shadow: 0px 12px 37px rgba(210, 173, 173, 0.3);
+          box-shadow: 0px 12px 37px rgba(210, 173, 173, 0.3);
+  border-radius: 32px;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+#myBtn img {
+  display: inline-block;
+  height: 2rem;
+  width: 2rem;
+  vertical-align: middle;
+}
+#myBtn span {
+  display: none;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 2rem;
+  color: #8b7a7a;
+  vertical-align: middle;
+}
+#myBtn:hover span {
+  display: inline-block;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.fadein {
+  opacity: 0;
+  -webkit-transition: all 1.5s;
+  transition: all 1.5s;
+  -webkit-transform: translate(0, 100px);
+          transform: translate(0, 100px);
+}
+
+.fadein.visible {
+  opacity: 1;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+}
+
 .nav {
   width: 100%;
   background: linear-gradient(115.45deg, rgba(255, 255, 255, 0.8) -10.09%, rgba(255, 255, 255, 0) 77.17%);
   -webkit-backdrop-filter: blur(40px);
           backdrop-filter: blur(40px);
+  position: fixed;
+  z-index: 9999;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
 }
 .nav ul {
   list-style: none;
@@ -73,7 +128,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-top: 12.5rem;
+  margin-top: 10rem;
   margin-bottom: 12.5rem;
 }
 .cover__title--sub {
@@ -276,7 +331,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
-@media (max-width: 640px) {
+@media (max-width: 375px) {
   .work__tag {
     margin-bottom: 1rem;
   }
@@ -295,7 +350,7 @@
   transition: 0.2s ease-in-out;
   position: relative;
 }
-@media (max-width: 640px) {
+@media (max-width: 375px) {
   .work__btn {
     width: 100%;
   }
@@ -460,14 +515,30 @@
   border-radius: 20px;
   border: 1px solid rgba(229, 236, 242, 0.6);
   width: 100%;
+}
+@media (max-width: 640px) {
+  .job {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+.job__tab {
+  padding-right: 0.55rem;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
 }
-.job__tab {
-  padding-right: 0.55rem;
-  overflow: scroll;
+@media (max-width: 640px) {
+  .job__tab {
+    overflow: scroll;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
 }
 .job__content {
   -webkit-box-orient: vertical;

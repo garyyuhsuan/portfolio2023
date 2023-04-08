@@ -9,7 +9,11 @@
   </head>
   <body>
     <div class="bg__blur--index parallex__bg--index">
-      <div class="nav">
+      <div onclick="topFunction()" id="myBtn">
+        <img src="./asset/icon__top.svg" alt="" />
+        <span>Start From the Top</span>
+      </div>
+      <header class="nav">
         <div class="nav__wrap maxwidth__780 d__flex">
           <ul class="nav__menu d__flex">
             <li>
@@ -23,7 +27,7 @@
             </li>
           </ul>
         </div>
-      </div>
+      </header>
       <div class="maxwidth__780">
         <div class="cover">
           <div class="cover__title--sub">
@@ -36,7 +40,7 @@
           <button class="cover__btn">Learn More →</button>
         </div>
 
-        <div class="work__right">
+        <div class="work__right fadein">
           <div class="work__right--card">
             <div class="work__title">Balance Insight Service</div>
             <div class="work__caption">
@@ -51,7 +55,7 @@
           <div class="work__right--image"></div>
         </div>
 
-        <div class="work__left">
+        <div class="work__left fadein">
           <div class="work__left--image"></div>
           <div class="work__left--card">
             <div class="work__title">Job Mentorship Network</div>
@@ -67,7 +71,7 @@
           </div>
         </div>
 
-        <div class="about d__flex">
+        <div class="about d__flex fadein">
           <div class="about__img"></div>
           <div class="about__info d__flex">
             <div class="about__title">About</div>
@@ -86,7 +90,7 @@
           </div>
         </div>
 
-        <div class="job d__flex">
+        <div class="job d__flex fadein">
           <div class="job__tab d__flex" id="tabs">
             <div class="tab focus">SinoPac</div>
             <div class="tab">JobWits</div>
@@ -149,19 +153,15 @@
               mentorship branding network.
             </div>
           </div>
-          
         </div>
 
-        <div class="contact">
+        <div class="contact fadein">
           <div class="contact__title--main">Get in Touch!</div>
           <div class="contact__divider"></div>
           <div class="contact__email">garychang.yuhsuan@gmail.com</div>
           <a href="https://www.linkedin.com/in/gary-chang-yuhsuan/">
-            <div class="contact__linkedin">
-              Gary Chang
-            </div>
+            <div class="contact__linkedin">Gary Chang</div>
           </a>
-          
         </div>
 
         <div class="spacing__200"></div>
@@ -170,6 +170,7 @@
       </div>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script>
       var tab;
       var tabContent;
@@ -208,6 +209,67 @@
           tabContent[b].classList.add("show");
         }
       }
+
+      $(function () {
+        var lastScrollTop = 0,
+          delta = 15;
+        $(window).scroll(function (event) {
+          var st = $(this).scrollTop();
+
+          if (Math.abs(lastScrollTop - st) <= delta) return;
+          if (st > lastScrollTop && lastScrollTop > 0) {
+            // downscroll code
+            $("header").css("top", "-80px");
+          } else {
+            // upscroll code
+            $("header").css("top", "0px");
+          }
+          lastScrollTop = st;
+        });
+      });
+
+      // Get the button:
+      let mybutton = document.getElementById("myBtn");
+
+      // When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function () {
+        scrollFunction();
+      };
+
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 20 ||
+          document.documentElement.scrollTop > 20
+        ) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+
+      // When the user clicks on the button, scroll to the top of the document
+      function topFunction() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+      }
+
+      // fade in grid items  ==================================
+
+      $(document).on("scroll", function () {
+        var pageTop = $(document).scrollTop();
+        var pageBottom = pageTop + $(window).height();
+        var tags = $(".fadein");
+
+        for (var i = 0; i < tags.length; i++) {
+          var tag = tags[i];
+
+          if ($(tag).offset().top < pageBottom) {
+            $(tag).addClass("visible");
+          } else {
+            $(tag).removeClass("visible");
+          }
+        }
+      });
     </script>
   </body>
 </html>
