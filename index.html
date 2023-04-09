@@ -8,26 +8,38 @@
     <title>GARY CHANG | PORTFOLIO</title>
   </head>
   <body>
+    <div class="page-loader">
+      <div class="spinner"></div>
+      <!-- <div <div class="txt">Just a Second...</div> -->
+    </div>
+
     <div class="bg__blur--index parallex__bg--index">
-      <div onclick="topFunction()" id="myBtn">
+      <div onclick="topFunction()" id="goTop">
         <img src="./asset/icon__top.svg" alt="" />
         <span>Start From the Top</span>
       </div>
+
       <header class="nav">
         <div class="nav__wrap maxwidth__780 d__flex">
           <ul class="nav__menu d__flex">
             <li>
-              <a href="" class="nav__menu--link">Works</a>
+              <a href="#work" class="nav__menu--link">Works</a>
             </li>
             <li>
-              <a href="" class="nav__menu--link">About</a>
+              <a href="#about" class="nav__menu--link">About</a>
             </li>
             <li>
-              <a href="" class="nav__menu--link">Resume</a>
+              <a
+                target="_blank"
+                href="CV_Gary Chang.pdf"
+                class="nav__menu--link"
+                >Resume</a
+              >
             </li>
           </ul>
         </div>
       </header>
+
       <div class="maxwidth__780">
         <div class="cover">
           <div class="cover__title--sub">
@@ -37,10 +49,14 @@
             Develop and Design Fascinating Interaction
           </div>
           <div class="cover__divider"></div>
-          <button class="cover__btn">Learn More →</button>
+          <a href="#work">
+            <div class="cover__btn">Learn More →</div>
+          </a>
         </div>
 
-        <div class="work__right fadein">
+        <div class="spacing__80" id="work"></div>
+
+        <div class="work__right fadein" id="work0">
           <div class="work__right--card">
             <div class="work__title">Balance Insight Service</div>
             <div class="work__caption">
@@ -49,13 +65,18 @@
             </div>
             <div class="work__row d__flex">
               <div class="work__tag">Front End Dev.</div>
-              <div class="work__btn">Demo</div>
+              <div
+                class="work__btn"
+                onclick="window.open('http://google.com','_blank')"
+              >
+                Demo
+              </div>
             </div>
           </div>
           <div class="work__right--image"></div>
         </div>
 
-        <div class="work__left fadein">
+        <div class="work__left fadein" id="work1">
           <div class="work__left--image"></div>
           <div class="work__left--card">
             <div class="work__title">Job Mentorship Network</div>
@@ -66,10 +87,17 @@
             </div>
             <div class="work__row d__flex">
               <div class="work__tag">UX Design</div>
-              <div class="work__btn">Demo</div>
+              <div
+                class="work__btn"
+                onclick="window.open('http://google.com','_blank')"
+              >
+                Demo
+              </div>
             </div>
           </div>
         </div>
+
+        <div class="spacing__80" id="about"></div>
 
         <div class="about d__flex fadein">
           <div class="about__img"></div>
@@ -158,7 +186,9 @@
         <div class="contact fadein">
           <div class="contact__title--main">Get in Touch!</div>
           <div class="contact__divider"></div>
-          <div class="contact__email">garychang.yuhsuan@gmail.com</div>
+          <a href="mailto:garychang.yuhsuan@gmail.com">
+            <div class="contact__email">garychang.yuhsuan@gmail.com</div>
+          </a>
           <a href="https://www.linkedin.com/in/gary-chang-yuhsuan/">
             <div class="contact__linkedin">Gary Chang</div>
           </a>
@@ -171,105 +201,10 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script>
-      var tab;
-      var tabContent;
-
-      window.onload = function () {
-        tabContent = document.getElementsByClassName("tabContent");
-        tab = document.getElementsByClassName("tab");
-        hideTabsContent(1);
-      };
-
-      document.getElementById("tabs").onclick = function (event) {
-        var target = event.target;
-        if (target.className == "tab") {
-          for (var i = 0; i < tab.length; i++) {
-            if (target == tab[i]) {
-              showTabsContent(i);
-              break;
-            }
-          }
-        }
-      };
-
-      function hideTabsContent(a) {
-        for (var i = a; i < tabContent.length; i++) {
-          tabContent[i].classList.remove("show");
-          tabContent[i].classList.add("hide");
-          tab[i].classList.remove("focus");
-        }
-      }
-
-      function showTabsContent(b) {
-        if (tabContent[b].classList.contains("hide")) {
-          hideTabsContent(0);
-          tab[b].classList.add("focus");
-          tabContent[b].classList.remove("hide");
-          tabContent[b].classList.add("show");
-        }
-      }
-
-      $(function () {
-        var lastScrollTop = 0,
-          delta = 15;
-        $(window).scroll(function (event) {
-          var st = $(this).scrollTop();
-
-          if (Math.abs(lastScrollTop - st) <= delta) return;
-          if (st > lastScrollTop && lastScrollTop > 0) {
-            // downscroll code
-            $("header").css("top", "-80px");
-          } else {
-            // upscroll code
-            $("header").css("top", "0px");
-          }
-          lastScrollTop = st;
-        });
-      });
-
-      // Get the button:
-      let mybutton = document.getElementById("myBtn");
-
-      // When the user scrolls down 20px from the top of the document, show the button
-      window.onscroll = function () {
-        scrollFunction();
-      };
-
-      function scrollFunction() {
-        if (
-          document.body.scrollTop > 20 ||
-          document.documentElement.scrollTop > 20
-        ) {
-          mybutton.style.display = "block";
-        } else {
-          mybutton.style.display = "none";
-        }
-      }
-
-      // When the user clicks on the button, scroll to the top of the document
-      function topFunction() {
-        document.body.scrollTop = 0; // For Safari
-        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-      }
-
-      // fade in grid items  ==================================
-
-      $(document).on("scroll", function () {
-        var pageTop = $(document).scrollTop();
-        var pageBottom = pageTop + $(window).height();
-        var tags = $(".fadein");
-
-        for (var i = 0; i < tags.length; i++) {
-          var tag = tags[i];
-
-          if ($(tag).offset().top < pageBottom) {
-            $(tag).addClass("visible");
-          } else {
-            $(tag).removeClass("visible");
-          }
-        }
-      });
-    </script>
+    <script src="./js/tabControl.js"></script>
+    <script src="./js/headerShow.js"></script>
+    <script src="./js/goTop.js"></script>
+    <script src="./js/fadeIn.js"></script>
+    <script src="./js/loading.js"></script>
   </body>
 </html>
