@@ -709,6 +709,16 @@
     justify-content: center;
     align-items: center; */
 }
+@media (max-width: 640px) {
+  .parallex__bg--index {
+    background-position: center;
+  }
+}
+@media (min-width: 1200px) {
+  .parallex__bg--index {
+    background-position: 10px -400px;
+  }
+}
 
 .signature {
   width: 100%;
