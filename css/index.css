@@ -377,6 +377,30 @@
   -webkit-box-shadow: 0px 6px 24px rgba(210, 173, 173, 0.5);
           box-shadow: 0px 6px 24px rgba(210, 173, 173, 0.5);
 }
+.work__btn-none {
+  cursor: pointer;
+  padding: 0.25rem 2rem 0.25rem 1rem;
+  background: rgba(255, 255, 255, 0.4);
+  -webkit-box-shadow: 0px 12px 37px rgba(210, 173, 173, 0.4);
+          box-shadow: 0px 12px 37px rgba(210, 173, 173, 0.4);
+  border-radius: 30px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 160%;
+  color: #8b7a7a;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  position: relative;
+}
+@media (max-width: 375px) {
+  .work__btn-none {
+    width: 100%;
+  }
+}
+.work__btn-none:hover {
+  -webkit-box-shadow: 0px 6px 24px rgba(210, 173, 173, 0.5);
+          box-shadow: 0px 6px 24px rgba(210, 173, 173, 0.5);
+}
 
 .about {
   width: 100%;
